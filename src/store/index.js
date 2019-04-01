@@ -165,7 +165,7 @@ const state = {
   userInfo: {
     name: "我就是当前用户",
     avatar: "/static/8.jpg",
-    score: 0,
+    score: parseInt(localStorage.score) || 0,
     uid: "u2017"
   },
   isDone: false

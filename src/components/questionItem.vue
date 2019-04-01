@@ -50,14 +50,6 @@ export default {
     this.initData();
   },
   mounted() {},
-  // activated() {
-  //   //  判断是否完成答题，从首页进入取消遮罩，从排行榜返回仍显示遮罩
-  //   if (this.$store.state.isDone) {
-  //     this.isDone = true;
-  //   } else {
-  //     this.isDone = false;
-  //   }
-  // },
   computed: {
     ...mapState([
       "itemNum",
