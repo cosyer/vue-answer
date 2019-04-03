@@ -73,7 +73,7 @@ export default {
         // action提交
         this.addItem(obj);
       } else {
-        alert("请选择");
+        this.$toast("请选择");
       }
     },
     postAll() {
@@ -89,7 +89,7 @@ export default {
         this.$store.commit("CLEAR_TIME");
         this.$store.commit("IS_DONE", true);
       } else {
-        alert("请选择");
+        this.$toast("请选择");
       }
     }
   }

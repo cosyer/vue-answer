@@ -6,6 +6,30 @@ import router from "./router";
 import store from "./store";
 import "./utils/flexible";
 import axios from "axios";
+
+import ToastComponent from "./components/toast.vue";
+var opt = {
+  duration: 3000
+};
+
+Vue.prototype.$toast = function(msg, options) {
+  if (typeof options == "object") {
+    for (var key in options) {
+      opt[key] = options[key];
+    }
+  }
+  const ToastController = Vue.extend(ToastComponent);
+  var instance = new ToastController().$mount(document.createElement("div"));
+  instance.msg = msg;
+  instance.visible = true;
+  document.body.appendChild(instance.$el);
+  setTimeout(() => {
+    instance.visible = false;
+    document.body.removeChild(instance.$el);
+    instance.visible = false;
+  }, opt.duration);
+};
+
 Vue.config.productionTip = false;
 Vue.config.debug = true;
 Vue.prototype.$http = axios;
