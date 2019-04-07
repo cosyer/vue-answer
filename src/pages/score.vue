@@ -12,6 +12,7 @@
         <ul>
           <li
             v-for="(item, key) in sortScore"
+            :key="key"
             :class="{active: item.uid ==uid}"
           >
             <img
