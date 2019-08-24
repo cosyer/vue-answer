@@ -33,10 +33,23 @@ Vue.prototype.$toast = function(msg, options) {
 Vue.config.productionTip = false;
 Vue.config.debug = true;
 Vue.prototype.$http = axios;
+
+import VueI18n from "vue-i18n";
+
+Vue.use(VueI18n); // 通过插件的形式挂载
+
+const i18n = new VueI18n({
+  locale: "zh-CN", // 语言标识
+  messages: {
+    "zh-CN": require("./utils/lang/zh-cn"), // 中文语言包
+    "en-US": require("./utils/lang/en-us") // 英文语言包
+  }
+});
 /* eslint-disable no-new */
 new Vue({
   el: "#app",
   router,
+  i18n,
   store,
   template: "<App/>",
   components: { App }

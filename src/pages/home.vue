@@ -4,14 +4,31 @@
       :to="{path: '/question'}"
       tag="button"
       class="begin-btn"
-    >开始答题</router-link>
+    >{{$t("m.start")}}</router-link>
+    <button
+      class="begin-btn"
+      @click="changeLangEvent"
+    >{{$t("m.switch")}}</button>
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    return {};
+    return {
+      lang: "zh-CN"
+    };
+  },
+  methods: {
+    changeLangEvent() {
+      if (this.lang === "zh-CN") {
+        this.lang = "en-US";
+        this.$i18n.locale = this.lang; //关键语句
+      } else {
+        this.lang = "zh-CN";
+        this.$i18n.locale = this.lang; //关键语句
+      }
+    }
   }
 };
 </script>
