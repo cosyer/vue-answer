@@ -59,7 +59,7 @@ import { mapState } from "vuex";
 export default {
   data() {
     return {
-      totalScore: 0
+      totalScore: 0,
     };
   },
   computed: {
@@ -75,7 +75,7 @@ export default {
       } else if (Score < 50) {
         return "荣获【学渣】称号<br>老师都被你气的吐血了";
       }
-    }
+    },
   },
   methods: {
     //      统计结果，并跳转排行榜
@@ -87,8 +87,8 @@ export default {
     againPlay() {
       this.$store.commit("CLEAR_TIME");
       this.$router.push("/");
-    }
-  }
+    },
+  },
 };
 </script>
 

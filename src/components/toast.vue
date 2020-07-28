@@ -14,9 +14,9 @@ export default {
   data() {
     return {
       msg: "Hello,Toast",
-      visible: false
+      visible: false,
     };
-  }
+  },
 };
 </script>
 

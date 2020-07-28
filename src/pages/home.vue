@@ -16,7 +16,7 @@
 export default {
   data() {
     return {
-      lang: "zh-CN"
+      lang: "zh-CN",
     };
   },
   methods: {
@@ -28,8 +28,8 @@ export default {
         this.lang = "zh-CN";
         this.$i18n.locale = this.lang; //关键语句
       }
-    }
-  }
+    },
+  },
 };
 </script>
 <style>

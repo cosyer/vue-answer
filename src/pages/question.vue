@@ -14,10 +14,10 @@ export default {
   name: "questionCom",
   components: {
     "time-score": timeScore,
-    "question-item": questionItem
+    "question-item": questionItem,
   },
   data() {
     return {};
-  }
+  },
 };
 </script>

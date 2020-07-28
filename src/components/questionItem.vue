@@ -38,12 +38,12 @@ import doneModal from "./doneModal";
 export default {
   components: {
     modal: modal,
-    "done-modal": doneModal
+    "done-modal": doneModal,
   },
   data() {
     return {
       chooseId: null,
-      allScore: null
+      allScore: null,
     };
   },
   created() {
@@ -58,8 +58,8 @@ export default {
       "isDone",
       "problems",
       "answerId",
-      "resultScore"
-    ])
+      "resultScore",
+    ]),
   },
   methods: {
     ...mapActions(["initData", "addItem"]),
@@ -91,8 +91,8 @@ export default {
       } else {
         this.$toast("请选择");
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
