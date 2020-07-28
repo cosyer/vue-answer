@@ -46,20 +46,68 @@ export default {
   data() {
     return {
       rankList: [],
-      uid: this.$store.state.userInfo.uid
+      uid: this.$store.state.userInfo.uid,
     };
   },
   created() {
-    this.$http.get("api/rankList").then(res => {
-      this.rankList = res.data;
-    });
+    this.$http
+      .get("api/rankList")
+      .then((res) => {
+        this.rankList = res.data;
+      })
+      .catch(() => {
+        this.rankList = [
+          {
+            avatar: "./static/1.jpg",
+            name: "洗刷刷洗刷刷",
+            score: "41",
+            uid: "u100",
+          },
+          {
+            avatar: "./static/2.jpg",
+            name: "天上的一只猪",
+            score: "45",
+            uid: "u101",
+          },
+          {
+            avatar: "./static/3.jpg",
+            name: "大脑斧",
+            score: "30",
+            uid: "u102",
+          },
+          {
+            avatar: "./static/4.jpg",
+            name: "可耐的小松许",
+            score: "71",
+            uid: "u103",
+          },
+          {
+            avatar: "./static/5.png",
+            name: "刺激的大额与",
+            score: "68",
+            uid: "u104",
+          },
+          {
+            avatar: "./static/6.png",
+            name: "凶猛的小斯子",
+            score: "55",
+            uid: "u105",
+          },
+          {
+            avatar: "./static/7.jpg",
+            name: "可爱的小公祖",
+            score: "88",
+            uid: "u106",
+          },
+        ];
+      });
   },
   computed: {
     sortScore() {
       let arr = this.rankList;
       arr.push(this.$store.state.userInfo);
       return arr.sort(this.sortFunc("score"));
-    }
+    },
   },
   methods: {
     sortFunc(keyName) {
@@ -68,8 +116,8 @@ export default {
         let value2 = b[keyName];
         return value2 - value1;
       };
-    }
-  }
+    },
+  },
 };
 </script>
 <style>

@@ -164,7 +164,7 @@ const state = {
   answerId: [],
   userInfo: {
     name: "我就是当前用户",
-    avatar: "/static/8.jpg",
+    avatar: "./static/8.jpg",
     score: parseInt(localStorage.score) || 0,
     uid: "u2017"
   },

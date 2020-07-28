@@ -29,7 +29,7 @@
             class="num"
             v-text="problems.length-answerId.length"
           ></span>
-          <span class="tag">答题</span>
+          <span class="tag">答错</span>
         </div>
       </div>
     </div>
