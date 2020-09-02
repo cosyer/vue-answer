@@ -18,6 +18,7 @@ Vue.prototype.$toast = function(msg, options) {
       opt[key] = options[key];
     }
   }
+  // Object.assign()
   const ToastController = Vue.extend(ToastComponent);
   var instance = new ToastController().$mount(document.createElement("div"));
   instance.msg = msg;
@@ -63,6 +64,7 @@ router.beforeEach((to, from, next) => {
     store.commit("IS_DONE", true);
     next();
   } else if (from.path === "/") {
+    // 初始化数据
     store.commit("INIT_DATA");
     next();
   } else {

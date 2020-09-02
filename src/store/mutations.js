@@ -32,8 +32,8 @@ export default {
     }
   },
   // 定时器
-  [type.INTEVAL_TIME](state) {
-    console.log("inteval", state.timer);
+  [type.INTERVAL_TIME](state) {
+    console.log("interval", state.timer);
     state.timer = setInterval(() => {
       if (state.allTime === 0) {
         clearInterval(state.timer);

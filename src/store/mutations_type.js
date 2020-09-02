@@ -4,7 +4,7 @@ export const ADD_ITEM = "ADD_ITEM";
 
 export const INIT_DATA = "INIT_DATA";
 
-export const INTEVAL_TIME = "INTEVAL_TIME";
+export const INTERVAL_TIME = "INTERVAL_TIME";
 
 export const CLEAR_TIME = "CLEAR_TIME";
 

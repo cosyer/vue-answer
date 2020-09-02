@@ -7,7 +7,7 @@
         v-for="(item, key) in problems[itemNum].answers"
         :key="key"
       ><input
-          v-model="chooseId"
+          v-model="chooseObj"
           type="radio"
           :value="item"
           :id="item.answerId"
@@ -42,7 +42,7 @@ export default {
   },
   data() {
     return {
-      chooseId: null,
+      chooseObj: null,
       allScore: null,
     };
   },
@@ -65,11 +65,11 @@ export default {
     ...mapActions(["initData", "addItem"]),
     // 下一步
     nextItem() {
-      if (this.chooseId) {
+      if (this.chooseObj) {
         let obj = {};
-        obj.answerId = this.chooseId.answerId;
-        obj.fid = this.chooseId.fid;
-        this.chooseId = null;
+        obj.answerId = this.chooseObj.answerId;
+        obj.fid = this.chooseObj.fid;
+        this.chooseObj = null;
         // action提交
         this.addItem(obj);
       } else {
@@ -77,14 +77,14 @@ export default {
       }
     },
     postAll() {
-      if (this.chooseId) {
+      if (this.chooseObj) {
         let obj = {};
-        obj.answerId = this.chooseId.answerId;
-        obj.fid = this.chooseId.fid;
-        this.chooseId = null;
+        obj.answerId = this.chooseObj.answerId;
+        obj.fid = this.chooseObj.fid;
+        this.chooseObj = null;
         // action提交
         this.addItem(obj);
-        // 最后一题清除定时器
+        // 交卷清除定时器
         clearInterval(this.timer);
         this.$store.commit("CLEAR_TIME");
         this.$store.commit("IS_DONE", true);

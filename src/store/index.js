@@ -5,10 +5,10 @@ import actions from "./actions";
 Vue.use(Vuex);
 
 const state = {
-  score: 20,
-  allTime: 20,
-  itemNum: 0,
-  timer: null,
+  score: 20, // 答对得分
+  allTime: 20, // 答题时间
+  itemNum: 0, // 题目索引
+  timer: null, // 定时器
   problems: [
     {
       problemId: 1,
@@ -163,7 +163,7 @@ const state = {
   ],
   answerId: [],
   userInfo: {
-    name: "我就是当前用户",
+    name: "cosyer",
     avatar: "./static/8.jpg",
     score: parseInt(localStorage.score) || 0,
     uid: "u2017"

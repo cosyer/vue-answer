@@ -51,7 +51,6 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
 export default {
   data() {
     return {};
@@ -60,24 +59,24 @@ export default {
   //重新开始答题isDone为false，如果从排行榜返回为true
   activated() {
     if (!this.$store.state.isDone) {
-      this.$store.commit("INTEVAL_TIME");
+      this.$store.commit("INTERVAL_TIME");
     }
   },
   computed: {
     //    计算剩余时间
-    remainTime: function() {
+    remainTime: function () {
       return this.$store.state.allTime;
     },
-    getMin: function() {
+    getMin: function () {
       const min = parseInt(this.remainTime / 60);
       return min < 10 ? "0" + min : min;
     },
-    getSec: function() {
+    getSec: function () {
       const sec = this.remainTime % 60;
       return sec < 10 ? "0" + sec : sec;
-    }
+    },
   },
-  methods: {}
+  methods: {},
 };
 </script>
 
